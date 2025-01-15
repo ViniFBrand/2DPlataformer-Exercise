@@ -20,6 +20,11 @@ public class Player : MonoBehaviour
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
 
+    [Header("Animation Player")]
+    public string boolRun = "Run";
+    public Animator animator;
+    public float durationToTurn = .1f;
+
     private float _currentSpeed;
 
 
@@ -32,20 +37,43 @@ public class Player : MonoBehaviour
         Movement();
     }
     #region FUNCTIONS
+
     private void Movement()
     {
         if (Input.GetKey(KeyCode.LeftShift))
+        {
             _currentSpeed = speedRun;
+            animator.speed = 2;
+        }
+            
         else
+        {
             _currentSpeed = speed;
+            animator.speed = 1;
+        }
+            
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
+            animator.SetBool(boolRun, true);
+            if(myRigidBody.transform.localScale.x != -1)
+            {
+                myRigidBody.transform.DOScaleX(-1, durationToTurn);
+            }
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
+            animator.SetBool(boolRun, true);
+            if (myRigidBody.transform.localScale.x != 1)
+            {
+                myRigidBody.transform.DOScaleX(1, durationToTurn);
+            }
+        }
+        else
+        {
+            animator.SetBool(boolRun, false);
         }
 
         if (myRigidBody.velocity.x > 0)
@@ -68,7 +96,7 @@ public class Player : MonoBehaviour
 
             DOTween.Kill(myRigidBody.transform);
 
-            JumpAnimation();
+            //JumpAnimation();
         }
     }
 
