@@ -7,8 +7,9 @@ public class ItemManager : Singleton<ItemManager>
 {
     public int coins;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Reset();
     }
 

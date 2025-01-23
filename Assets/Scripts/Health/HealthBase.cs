@@ -8,7 +8,7 @@ public class HealthBase : MonoBehaviour
     public int startLife = 10;
 
     public bool destroyOnKill = false;
-    public float delayToKill = 0f;
+    public float delayToKill = 0.2f;
 
     private int _currentLife;
     private bool _isDead = false;
