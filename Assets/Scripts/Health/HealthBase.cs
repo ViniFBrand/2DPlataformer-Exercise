@@ -35,6 +35,7 @@ public class HealthBase : MonoBehaviour
 
         if (_currentLife < 0)
         {
+            Debug.Log("Player Morreu");
             Kill();
         }
 
