@@ -1988,10 +1988,10 @@ MonoBehaviour:
   m_DeadZoneHeight: 0.213
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.805
+  m_SoftZoneWidth: 0.595
   m_SoftZoneHeight: 2
-  m_BiasX: 0.027000481
-  m_BiasY: 0.016999666
+  m_BiasX: 0
+  m_BiasY: 0.016999632
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 0
@@ -6472,7 +6472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startLife: 10
   destroyOnKill: 1
-  delayToKill: 2
+  delayToKill: 0.7
   _flashColor: {fileID: 2090565670}
 --- !u!114 &2090565670
 MonoBehaviour:

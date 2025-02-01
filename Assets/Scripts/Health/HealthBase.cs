@@ -42,9 +42,8 @@ public class HealthBase : MonoBehaviour
 
         _currentLife -= damage;
 
-        if (_currentLife < 0)
+        if (_currentLife <= 0)
         {
-            Debug.Log("Player Morreu");
             Kill();
         }
 
