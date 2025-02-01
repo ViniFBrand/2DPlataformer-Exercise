@@ -13,7 +13,7 @@ public class CoinsValue : MonoBehaviour
         ShowText();
     }
 
-    public void ShowText()
+    private void ShowText()
     {
         textElement.text = "x" + ItemManager.Instance.coins;
     }
