@@ -5,7 +5,7 @@ using Ebac.Core.Sigleton;
 
 public class ItemManager : Singleton<ItemManager>
 {
-    public int coins;
+    public SOInt coins;
 
     protected override void Awake()
     {
@@ -15,11 +15,16 @@ public class ItemManager : Singleton<ItemManager>
 
     private void Reset()
     {
-        coins = 0;
+        coins.value = 0;
     }
 
     public void AddCoins(int amount = 1)
     {
-        coins +=amount;
+        coins.value +=amount;
     }
+
+    /*private void UpdateUI()
+    {
+       UIInGameManager.UpdateTextCoins(coins.value.ToString());
+    }*/
 }

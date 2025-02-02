@@ -233,6 +233,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 714790499}
+  - {fileID: 576384570}
   m_Father: {fileID: 1768970332}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1831,6 +1832,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &576384569
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576384570}
+  - component: {fileID: 576384571}
+  m_Layer: 0
+  m_Name: UIInGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &576384570
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576384569}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 19419806}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &576384571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576384569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a348fe6a8320a248afdc1ea0cf023c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiTextCoins: {fileID: 732008863}
 --- !u!1 &655747451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,7 +1959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb003ec8ff0dda44ca77a23067f80bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coins: 0
+  coins: {fileID: 11400000, guid: 43533a402fd024f4d9468ac4b5fdde57, type: 2}
 --- !u!4 &714790499
 Transform:
   m_ObjectHideFlags: 0
@@ -2027,6 +2072,7 @@ GameObject:
   - component: {fileID: 732008862}
   - component: {fileID: 732008864}
   - component: {fileID: 732008863}
+  - component: {fileID: 732008865}
   m_Layer: 5
   m_Name: Contador
   m_TagString: Untagged
@@ -2150,6 +2196,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732008861}
   m_CullTransparentMesh: 1
+--- !u!114 &732008865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732008861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bd19d56ad04124cab9f4a93794b0d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SOInt: {fileID: 11400000, guid: 43533a402fd024f4d9468ac4b5fdde57, type: 2}
+  uiTextValue: {fileID: 732008863}
 --- !u!212 &748193686 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5421898557666172458, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -3787,7 +3847,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374826560}
-  - component: {fileID: 1374826561}
   m_Layer: 5
   m_Name: HUD_Coins
   m_TagString: Untagged
@@ -3816,19 +3875,6 @@ RectTransform:
   m_AnchoredPosition: {x: 158.194, y: -91.936}
   m_SizeDelta: {x: 286.387, y: 153.868}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1374826561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1374826559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf8789e27a49f5429af74a284e73603, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textElement: {fileID: 732008863}
 --- !u!1 &1384292519
 GameObject:
   m_ObjectHideFlags: 0
