@@ -28,6 +28,11 @@ public class Player : MonoBehaviour
         }
 
         _currentPlayer = Instantiate(soPlayerSetup.player, transform);
+
+        var gun = _currentPlayer.transform.GetComponentInChildren<GunBase>();
+        gun.playerSideReference = transform;
+
+        healthBase.flashColor = _currentPlayer.transform.GetComponentInChildren<FlashColor>();
     }
 
     private void Update()
