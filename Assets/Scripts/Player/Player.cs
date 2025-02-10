@@ -112,6 +112,7 @@ public class Player : MonoBehaviour
     }
 
 
+    
     /*private void JumpAnimation()
     {
         myRigidBody.transform.DOScaleY(soPlayerSetup.jumpScaleY, soPlayerSetup.animationDuration).SetLoops(2,LoopType.Yoyo).SetEase(soPlayerSetup.ease);

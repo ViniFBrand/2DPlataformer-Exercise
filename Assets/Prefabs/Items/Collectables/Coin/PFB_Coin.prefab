@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7659946700068029791}
+  - {fileID: 4694416219680192242}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,7 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895908a5c4548ef4497accc99129ad0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 4694416219680192243}
   compareTag: Player
+  graphicItem: {fileID: 8230734792229584169}
+  timeToHide: 3
 --- !u!58 &4864380010107136996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,3 +148,74 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2747686326239297796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 428016645085242157}
+    m_Modifications:
+    - target: {fileID: 7423151037033199605, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_Name
+      value: PFB_ParticleSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7423151037033199607, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 20
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+--- !u!4 &4694416219680192242 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7423151037033199606, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+  m_PrefabInstance: {fileID: 2747686326239297796}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4694416219680192243 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7423151037033199607, guid: 69a3864808f77c94e8cc80166d2e752f, type: 3}
+  m_PrefabInstance: {fileID: 2747686326239297796}
+  m_PrefabAsset: {fileID: 0}
