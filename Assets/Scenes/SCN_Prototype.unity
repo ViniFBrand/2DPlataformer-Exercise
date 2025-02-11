@@ -6779,7 +6779,7 @@ MonoBehaviour:
   myRigidBody: {fileID: 2090565665}
   healthBase: {fileID: 2090565669}
   soPlayerSetup: {fileID: 11400000, guid: 06a8c0a7a80b4a34ca701dbc109dc9b2, type: 2}
-  collider2D: {fileID: 0}
+  collider2D: {fileID: 2090565666}
   distToGround: 0
   spaceToGround: 0.1
 --- !u!114 &2090565669
