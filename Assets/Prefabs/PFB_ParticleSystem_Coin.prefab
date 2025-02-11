@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7423151037033199607}
   - component: {fileID: 7423151037033199604}
   m_Layer: 0
-  m_Name: PFB_ParticleSystem_2
+  m_Name: PFB_ParticleSystem_Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4817,7 +4817,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9f0953c91964f24d9cad1c0d58afed0, type: 2}
+  - {fileID: 2100000, guid: 98d079272cb727b4cadde1e3db9d4fb2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
