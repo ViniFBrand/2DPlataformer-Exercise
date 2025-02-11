@@ -102,7 +102,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
             myRigidBody.velocity = Vector2.up * soPlayerSetup.forceJump;
             //myRigidBody.transform.localScale = Vector2.one;
@@ -120,9 +120,10 @@ public class Player : MonoBehaviour
         
     }
 
-    private void IsGrounded()
+    private bool IsGrounded()
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.yellow, distToGround + spaceToGround);
+        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
     }
 
 

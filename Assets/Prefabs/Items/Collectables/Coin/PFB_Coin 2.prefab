@@ -65,7 +65,7 @@ MonoBehaviour:
   particleSystem: {fileID: 2307679526258572073}
   compareTag: Player
   graphicItem: {fileID: 8230734792229584169}
-  timeToHide: 3
+  timeToHide: 1
 --- !u!1 &8230734792229584169
 GameObject:
   m_ObjectHideFlags: 0
