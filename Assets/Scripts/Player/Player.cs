@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
     private Animator _currentPlayer;
     private float _currentSpeed;
 
-
+    [Header("Jump Collision Check")]
+    public Collider2D collider2D;
+    public float distToGround;
+    public float spaceToGround = .1f;
 
     #endregion
 
@@ -33,10 +36,16 @@ public class Player : MonoBehaviour
         gun.playerSideReference = transform;
 
         healthBase.flashColor = _currentPlayer.transform.GetComponentInChildren<FlashColor>();
+
+        if(collider2D != null)
+        {
+            distToGround = collider2D.bounds.extents.y;
+        }
     }
 
     private void Update()
     {
+        IsGrounded();
         Jump();
         Movement();
     }
@@ -109,6 +118,11 @@ public class Player : MonoBehaviour
         healthBase.OnKill -= OnPlayerKill;
         _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
         
+    }
+
+    private void IsGrounded()
+    {
+        Debug.DrawRay(transform.position, -Vector2.up, Color.yellow, distToGround + spaceToGround);
     }
 
 

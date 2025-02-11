@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428016645085242157}
-  - component: {fileID: 5696814095240424076}
   - component: {fileID: 4864380010107136996}
+  - component: {fileID: 3175027939851811741}
   m_Layer: 0
   m_Name: PFB_Coin 2
   m_TagString: Untagged
@@ -34,22 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5696814095240424076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3356462336757702697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 895908a5c4548ef4497accc99129ad0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleSystem: {fileID: 2307679526258572073}
-  compareTag: Player
-  graphicItem: {fileID: 8230734792229584169}
-  timeToHide: 3
 --- !u!58 &4864380010107136996
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -66,6 +50,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.17
+--- !u!114 &3175027939851811741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3356462336757702697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e31f8df8850df14b8049ac3f138cf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particleSystem: {fileID: 2307679526258572073}
+  compareTag: Player
+  graphicItem: {fileID: 8230734792229584169}
+  timeToHide: 3
 --- !u!1 &8230734792229584169
 GameObject:
   m_ObjectHideFlags: 0
