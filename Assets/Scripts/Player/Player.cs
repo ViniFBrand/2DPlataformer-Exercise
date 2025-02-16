@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     private float _currentSpeed;
 
     [Header("Jump Collision Check")]
-    public Collider2D collider2D;
+    public Collider2D colliderPlayer2D;
     public float distToGround;
     public float spaceToGround = .1f;
 
@@ -37,9 +37,9 @@ public class Player : MonoBehaviour
 
         healthBase.flashColor = _currentPlayer.transform.GetComponentInChildren<FlashColor>();
 
-        if(collider2D != null)
+        if(colliderPlayer2D != null)
         {
-            distToGround = collider2D.bounds.extents.y;
+            distToGround = colliderPlayer2D.bounds.extents.y;
         }
     }
 
@@ -104,6 +104,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
         {
+            Debug.Log("Pulou");
             myRigidBody.velocity = Vector2.up * soPlayerSetup.forceJump;
             //myRigidBody.transform.localScale = Vector2.one;
 
