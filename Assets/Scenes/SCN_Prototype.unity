@@ -1369,7 +1369,7 @@ GameObject:
   - component: {fileID: 368721282}
   - component: {fileID: 368721284}
   - component: {fileID: 368721283}
-  - component: {fileID: 368721285}
+  - component: {fileID: 368721286}
   m_Layer: 0
   m_Name: SPR_Floor
   m_TagString: Floor
@@ -1499,8 +1499,8 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: 11.891609, y: 1.3867385, z: 0}
     m_Extent: {x: 113.00081, y: 3.6211388, z: 0}
---- !u!68 &368721285
-EdgeCollider2D:
+--- !u!61 &368721286
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1512,26 +1512,19 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 11.891609, y: -0.60220027}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 226.00162, y: 3.2644}
   m_EdgeRadius: 0
-  m_Points:
-  - {x: -101.04702, y: 0.9935312}
-  - {x: -97.92805, y: 0.9987464}
-  - {x: -89.653755, y: 1.0230986}
-  - {x: -77.02033, y: 1.0637012}
-  - {x: -60.823605, y: 1.1176633}
-  - {x: -41.859493, y: 1.1820937}
-  - {x: -20.923977, y: 1.2541038}
-  - {x: 1.1870732, y: 1.330803}
-  - {x: 34.509853, y: 1.4472876}
-  - {x: 66.61381, y: 1.5601382}
-  - {x: 101.51697, y: 1.6834941}
-  - {x: 122.01964, y: 1.7562498}
-  - {x: 124.88095, y: 1.766428}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
 --- !u!1 &398309974
 GameObject:
   m_ObjectHideFlags: 0
