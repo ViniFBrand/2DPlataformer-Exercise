@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public Collider2D colliderPlayer2D;
     public float distToGround;
     public float spaceToGround = .1f;
+    public ParticleSystem jumpVFX;
 
     #endregion
 
@@ -110,7 +111,13 @@ public class Player : MonoBehaviour
             DOTween.Kill(myRigidBody.transform);
 
             //JumpAnimation();
+            PlayerJumpVFX();
         }
+    }
+
+    private void PlayerJumpVFX()
+    {
+        if (jumpVFX != null) jumpVFX.Play();
     }
 
     private void OnPlayerKill()
