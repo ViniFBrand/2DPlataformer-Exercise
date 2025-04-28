@@ -131,6 +131,7 @@ public class Player : MonoBehaviour
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.yellow, distToGround + spaceToGround);
         return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+     
     }
 
 

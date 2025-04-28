@@ -7,7 +7,10 @@ public class ItemCollectableBase : MonoBehaviour
     public ParticleSystem particleSystem;
     public string compareTag = "Player";
     public GameObject graphicItem;
-    public float timeToHide = 3;
+    public float timeToHide = 1;
+
+    [Header("Sounds")]
+    public AudioSource audioSource;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,5 +37,6 @@ public class ItemCollectableBase : MonoBehaviour
     protected virtual void OnCollect()
     {
         if(particleSystem != null) particleSystem.Play();
+        if(audioSource != null) audioSource.Play();
     }
 }
