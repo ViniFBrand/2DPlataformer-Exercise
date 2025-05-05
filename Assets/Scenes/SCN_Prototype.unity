@@ -6430,7 +6430,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1864808107}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -280.7166, y: -103.432, z: -13.84}
+  m_LocalPosition: {x: -280.71838, y: -103.432, z: -13.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 730683988}
@@ -6798,7 +6798,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066474203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0681448, y: 4.939839, z: 26.116222}
+  m_LocalPosition: {x: -0.06992149, y: 4.939839, z: 26.116222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1827694167}
@@ -7664,12 +7664,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 279908372}
     m_Modifications:
     - target: {fileID: 3029333068080826059, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3029333068080826059, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5457269413102769422, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457269413102769422, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5457269413102769422, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697260976484370896, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 7697260976484370896, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7768,8 +7784,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697260976922789906, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697260976922789906, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697260976922789906, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7697260978214354173, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 606ba743522c2bc4e885d8458d591f0d, type: 3}
