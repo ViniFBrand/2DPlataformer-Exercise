@@ -116,6 +116,7 @@ public class Player : MonoBehaviour
             DOTween.Kill(myRigidBody.transform);
             if (tween != null) tween.Kill();
 
+            //Animação de Pulo ainda não funciona (A Corrigir)
             JumpAnimation();
             PlayerJumpVFX();
         }
