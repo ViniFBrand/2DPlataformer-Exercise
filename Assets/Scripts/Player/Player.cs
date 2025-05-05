@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
+    private int _playerDirection = 1;
 
     #endregion
 
@@ -75,6 +76,7 @@ public class Player : MonoBehaviour
             {
                 myRigidBody.transform.DOScaleX(-1, soPlayerSetup.durationToTurn);
             }
+            _playerDirection = -1;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -84,6 +86,7 @@ public class Player : MonoBehaviour
             {
                 myRigidBody.transform.DOScaleX(1, soPlayerSetup.durationToTurn);
             }
+            _playerDirection = 1;
         }
         else
         {
@@ -101,6 +104,8 @@ public class Player : MonoBehaviour
 
     }
 
+    Tweener tween;
+
     private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
@@ -109,8 +114,9 @@ public class Player : MonoBehaviour
             //myRigidBody.transform.localScale = Vector2.one;
 
             DOTween.Kill(myRigidBody.transform);
+            if (tween != null) tween.Kill();
 
-            //JumpAnimation();
+            JumpAnimation();
             PlayerJumpVFX();
         }
     }
@@ -136,11 +142,23 @@ public class Player : MonoBehaviour
 
 
     
-    /*private void JumpAnimation()
+    private void JumpAnimation()
     {
         myRigidBody.transform.DOScaleY(soPlayerSetup.jumpScaleY, soPlayerSetup.animationDuration).SetLoops(2,LoopType.Yoyo).SetEase(soPlayerSetup.ease);
-        myRigidBody.transform.DOScaleX(soPlayerSetup.jumpScaleX, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
-    }*/
+        tween = DOTween.To(ScaleXGetter, ScaleXSetter, soPlayerSetup.jumpScaleX, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
+    }
+
+    private float ScaleXGetter()
+    {
+        return myRigidBody.transform.localPosition.x;
+    }
+
+    private void ScaleXSetter(float value)
+    {
+        var s = myRigidBody.transform.localScale;
+        s.x = value * _playerDirection;
+        myRigidBody.transform.localScale = s;
+    }
 
     #endregion
 }
