@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     #region VARIABLES
     public Rigidbody2D myRigidBody;
     public HealthBase healthBase;
+    public GameObject gameOver;
 
     [Header("Setup")]
     public SOPlayerSetup soPlayerSetup;
@@ -140,6 +141,7 @@ public class Player : MonoBehaviour
     {
         healthBase.OnKill -= OnPlayerKill;
         _currentPlayer.SetTrigger(soPlayerSetup.triggerDeath);
+        gameOver.SetActive(true);
         
     }
 
