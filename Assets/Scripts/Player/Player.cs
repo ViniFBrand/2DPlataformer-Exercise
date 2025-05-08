@@ -23,6 +23,10 @@ public class Player : MonoBehaviour
     public ParticleSystem jumpVFX;
     private int _playerDirection = 1;
 
+    [Header("Audio Setup")]
+
+    public AudioRandomPlayAudioClips audioJump;
+
     #endregion
 
     private void Awake()
@@ -113,11 +117,16 @@ public class Player : MonoBehaviour
             myRigidBody.velocity = Vector2.up * soPlayerSetup.forceJump;
             //myRigidBody.transform.localScale = Vector2.one;
 
+            //Animação de Pulo ainda não funciona (A Corrigir) - Nessa posição o JumpAnimation não funciona
+            JumpAnimation();
+
             DOTween.Kill(myRigidBody.transform);
             if (tween != null) tween.Kill();
 
-            //Animação de Pulo ainda não funciona (A Corrigir)
-            JumpAnimation();
+            
+
+            Debug.Log("Pulei");
+            if(audioJump!=null) audioJump.PlayRandom();
             PlayerJumpVFX();
         }
     }

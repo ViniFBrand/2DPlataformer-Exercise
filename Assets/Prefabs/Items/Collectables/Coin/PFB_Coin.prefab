@@ -50,8 +50,9 @@ MonoBehaviour:
   particleSystem: {fileID: 6601221055772349055}
   compareTag: Player
   graphicItem: {fileID: 8230734792229584169}
-  timeToHide: 0.3
+  timeToHide: 1
   audioSource: {fileID: 9186283802738922097}
+  collider: {fileID: 4864380010107136996}
 --- !u!58 &4864380010107136996
 CircleCollider2D:
   m_ObjectHideFlags: 0

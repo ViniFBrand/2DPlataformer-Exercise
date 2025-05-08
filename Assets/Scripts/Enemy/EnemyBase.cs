@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour
     public string triggerDeath = "Death";
 
     public HealthBase healthBase;
+    public AudioSource audioSourceKill;
 
     private void Awake()
     {
@@ -24,6 +25,7 @@ public class EnemyBase : MonoBehaviour
     private void OnEnemyKill()
     {
         healthBase.OnKill -= OnEnemyKill;
+        if(audioSourceKill != null) audioSourceKill.Play();
         PlayDeathAnimation();
     }
 

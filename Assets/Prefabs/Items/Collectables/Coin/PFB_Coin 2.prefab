@@ -68,6 +68,7 @@ MonoBehaviour:
   graphicItem: {fileID: 8230734792229584169}
   timeToHide: 1
   audioSource: {fileID: 761127188145693437}
+  collider: {fileID: 4864380010107136996}
 --- !u!1 &5379734692408936108
 GameObject:
   m_ObjectHideFlags: 0
