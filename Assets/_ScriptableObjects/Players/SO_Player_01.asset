@@ -19,7 +19,7 @@ MonoBehaviour:
   speedRun: 16
   forceJump: 20
   jumpScaleY: 1.1
-  jumpScaleX: 0.7
+  jumpScaleX: 0.8
   animationDuration: 0.3
   ease: 27
   boolRun: Run

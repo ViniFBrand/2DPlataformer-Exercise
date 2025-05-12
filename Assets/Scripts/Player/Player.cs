@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 
     [Header("Jump Collision Check")]
     public Collider2D colliderPlayer2D;
+    public string tagToCompare = "Floor";
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
@@ -109,7 +110,7 @@ public class Player : MonoBehaviour
 
     }
 
-    Tweener tween;
+    //Tweener tween;
 
     private void Jump()
     {
@@ -119,15 +120,16 @@ public class Player : MonoBehaviour
             //myRigidBody.transform.localScale = Vector2.one;
 
             //Animação de Pulo ainda não funciona (A Corrigir) - Nessa posição o JumpAnimation não funciona
-            JumpAnimation();
-
-            DOTween.Kill(myRigidBody.transform);
-            if (tween != null) tween.Kill();
-
             
 
-            Debug.Log("Pulei");
+            DOTween.Kill(myRigidBody.transform);
+            //if (tween != null) tween.Kill();
+
+
+            
+            //Debug.Log("Pulei");
             if(audioJump!=null) audioJump.PlayRandom();
+            JumpAnimation();
             PlayerJumpVFX();
         }
     }
@@ -148,8 +150,9 @@ public class Player : MonoBehaviour
     private bool IsGrounded()
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.yellow, distToGround + spaceToGround);
-        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
-     
+
+        if (colliderPlayer2D.transform.CompareTag(tagToCompare)) return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+        else return false;
     }
 
 
@@ -157,10 +160,13 @@ public class Player : MonoBehaviour
     private void JumpAnimation()
     {
         myRigidBody.transform.DOScaleY(soPlayerSetup.jumpScaleY, soPlayerSetup.animationDuration).SetLoops(2,LoopType.Yoyo).SetEase(soPlayerSetup.ease);
-        tween = DOTween.To(ScaleXGetter, ScaleXSetter, soPlayerSetup.jumpScaleX, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
+        myRigidBody.transform.DOScaleX(soPlayerSetup.jumpScaleX * _playerDirection, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
+        //tween = DOTween.To(ScaleXGetter, ScaleXSetter, soPlayerSetup.jumpScaleX, soPlayerSetup.animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(soPlayerSetup.ease);
     }
 
-    private float ScaleXGetter()
+    //Alternativa para  DOScaleX (Não estava funcionando apropriadamente)
+
+    /*private float ScaleXGetter()
     {
         return myRigidBody.transform.localPosition.x;
     }
@@ -170,7 +176,7 @@ public class Player : MonoBehaviour
         var s = myRigidBody.transform.localScale;
         s.x = value * _playerDirection;
         myRigidBody.transform.localScale = s;
-    }
+    }*/
 
     #endregion
 }
