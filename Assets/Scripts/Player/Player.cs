@@ -16,10 +16,12 @@ public class Player : MonoBehaviour
 
     private Animator _currentPlayer;
     private float _currentSpeed;
+    public int jumpLimit;
 
     [Header("Jump Collision Check")]
     public Collider2D colliderPlayer2D;
-    public string tagToCompare = "Floor";
+    public string tagToCompareFloor = "Floor";
+    public string tagToCompareEnemy = "Enemy";
     public float distToGround;
     public float spaceToGround = .1f;
     public ParticleSystem jumpVFX;
@@ -49,6 +51,11 @@ public class Player : MonoBehaviour
         {
             distToGround = colliderPlayer2D.bounds.extents.y;
         }
+    }
+
+    private void Start()
+    {
+        jumpLimit = 0;
     }
 
     private void Update()
@@ -114,7 +121,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded())
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpLimit<2)
         {
             myRigidBody.velocity = Vector2.up * soPlayerSetup.forceJump;
             //myRigidBody.transform.localScale = Vector2.one;
@@ -131,6 +138,7 @@ public class Player : MonoBehaviour
             if(audioJump!=null) audioJump.PlayRandom();
             JumpAnimation();
             PlayerJumpVFX();
+            jumpLimit++;
         }
     }
 
@@ -151,8 +159,10 @@ public class Player : MonoBehaviour
     {
         Debug.DrawRay(transform.position, -Vector2.up, Color.yellow, distToGround + spaceToGround);
 
-        if (colliderPlayer2D.transform.CompareTag(tagToCompare)) return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
-        else return false;
+        //if (colliderPlayer2D.transform.CompareTag(tagToCompare)) 
+        return Physics2D.Raycast(transform.position, -Vector2.up, distToGround + spaceToGround);
+        
+        //else return false;
     }
 
 
@@ -177,6 +187,30 @@ public class Player : MonoBehaviour
         s.x = value * _playerDirection;
         myRigidBody.transform.localScale = s;
     }*/
+
+    #endregion
+
+    #region ONTRIGGER
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+        if (collision.transform.CompareTag(tagToCompareEnemy))
+        {
+            if (jumpLimit < 2) jumpLimit++;
+        }
+    }
+
+    #endregion
+
+    #region ONCOLLIDER
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag(tagToCompareFloor))
+        {
+            jumpLimit = 0;
+        }
+    }
 
     #endregion
 }

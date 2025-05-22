@@ -7830,7 +7830,10 @@ MonoBehaviour:
   healthBase: {fileID: 2090565669}
   gameOver: {fileID: 8712168012125253049}
   soPlayerSetup: {fileID: 11400000, guid: 06a8c0a7a80b4a34ca701dbc109dc9b2, type: 2}
+  jumpLimit: 0
   colliderPlayer2D: {fileID: 2090565666}
+  tagToCompareFloor: Floor
+  tagToCompareEnemy: Enemy
   distToGround: 0
   spaceToGround: 0.1
   jumpVFX: {fileID: 2082794092}
@@ -8270,6 +8273,10 @@ PrefabInstance:
     - target: {fileID: 1496339605471086669, guid: 2dfefe7cdac587547a4bc031d3b4ef1c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1496339605471086704, guid: 2dfefe7cdac587547a4bc031d3b4ef1c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dfefe7cdac587547a4bc031d3b4ef1c, type: 3}
