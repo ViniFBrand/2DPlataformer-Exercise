@@ -7830,7 +7830,7 @@ MonoBehaviour:
   healthBase: {fileID: 2090565669}
   gameOver: {fileID: 8712168012125253049}
   soPlayerSetup: {fileID: 11400000, guid: 06a8c0a7a80b4a34ca701dbc109dc9b2, type: 2}
-  jumpLimit: 0
+  jumpLimit: 2
   colliderPlayer2D: {fileID: 2090565666}
   tagToCompareFloor: Floor
   tagToCompareEnemy: Enemy

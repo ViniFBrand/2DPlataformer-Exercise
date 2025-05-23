@@ -16,7 +16,10 @@ public class Player : MonoBehaviour
 
     private Animator _currentPlayer;
     private float _currentSpeed;
-    public int jumpLimit;
+    private int _currentJump;
+
+    [Header("Jump Setup")]
+    public int jumpLimit = 2;
 
     [Header("Jump Collision Check")]
     public Collider2D colliderPlayer2D;
@@ -55,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        jumpLimit = 0;
+        _currentJump = 0;
     }
 
     private void Update()
@@ -121,7 +124,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && jumpLimit<2)
+        if (Input.GetKeyDown(KeyCode.Space) && IsGrounded() && _currentJump< jumpLimit)
         {
             myRigidBody.velocity = Vector2.up * soPlayerSetup.forceJump;
             //myRigidBody.transform.localScale = Vector2.one;
@@ -138,7 +141,7 @@ public class Player : MonoBehaviour
             if(audioJump!=null) audioJump.PlayRandom();
             JumpAnimation();
             PlayerJumpVFX();
-            jumpLimit++;
+            _currentJump++;
         }
     }
 
@@ -196,7 +199,7 @@ public class Player : MonoBehaviour
     { 
         if (collision.transform.CompareTag(tagToCompareEnemy))
         {
-            if (jumpLimit < 2) jumpLimit++;
+            if (_currentJump < jumpLimit) _currentJump++;
         }
     }
 
@@ -208,7 +211,7 @@ public class Player : MonoBehaviour
     {
         if (collision.transform.CompareTag(tagToCompareFloor))
         {
-            jumpLimit = 0;
+            _currentJump = 0;
         }
     }
 
